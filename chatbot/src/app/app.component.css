@@ -1,0 +1,124 @@
+.chat-container {
+    max-width: 800px;
+    margin: auto;
+    border: 1px solid #0fa2d3;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 10px 0;
+  }
+  
+  .chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 80%;
+  }
+  
+  .chat-message.user {
+    align-self: flex-end; 
+    background-color: #d1e7dd;
+    color: #0f5132;
+    text-align: left;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  .chat-message:not(.user) {
+    align-self: flex-start;
+
+    color: #000000;
+    text-align: left;
+    margin-right: auto; 
+    margin-left: 0;
+  }
+  .chat-message.error {
+    align-self: flex-start;
+    background-color: #c1b6b6;
+    color: #ff0000;
+    text-align: left;
+    margin-right: auto; 
+    margin-left: 0;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #0fa2d3;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 8px;
+    font-size: 1em;
+  }
+  
+  .chat-input button {
+    margin-left: 5px;
+    padding: 8px 12px;
+  }
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 85%;
+    align-items: flex-start;
+  }
+  
+  .spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #ddd; 
+    border-top: 3px solid #3498db; 
+    border-radius: 50%;
+    animation: spin 1s linear infinite; 
+    margin-left: 0;
+    align-items: flex-start;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+ 
+  .bottom-right-info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;  
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .info-image {
+    width: 40px; 
+    height: 40px;
+    margin-right: 10px; 
+  }
+  
+  .info-text {
+    font-size: 14px;
+    color: #333;
+  }

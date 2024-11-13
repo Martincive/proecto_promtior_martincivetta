@@ -1,0 +1,23 @@
+<h1 class="title">Chatbot</h1>
+<div class="chat-container">
+  <div class="chat-box">
+    <div *ngFor="let msg of messages" class="chat-message" [class.user]="msg.user" [class.error]="msg.error">
+      <span>{{ msg.text }}</span>
+    </div>
+    <div *ngIf="isResponding" class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" [(ngModel)]="userMessage" (ngModelChange)="onMessageChange()" placeholder="Type your message..."
+      (keyup.enter)="canSend && !isResponding && sendMessage()" />
+    <button (click)="sendMessage()" [disabled]="!canSend || isResponding">
+      Send
+    </button>
+  </div>
+</div>
+<div class="bottom-right-info">
+  <img src="https://media.licdn.com/dms/image/v2/D4D0BAQGYG0iiA8Pmrg/company-logo_200_200/company-logo_200_200/0/1707656855334/promptior_ai_logo?e=2147483647&v=beta&t=wTqwFhVa863XEzC074evdEJlNd7UzNmFoxLL_OhkXS8" alt="Info Image" class="info-image" />
+  <p class="info-text">Martin Civetta</p>
+</div>
